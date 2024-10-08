@@ -1,0 +1,15 @@
+"""
+Make life easier with sparta
+==================================
+
+DSMC suite for particle transport
+Copyright (c) 2024 Tianbai Xiao <tianbaixiao@gmail.com>
+"""
+
+from cleaner import remove_file
+
+def clean_output():
+    '''Remove the output files'''
+    clean_mirgrid()
+    subprocess.run(["rm", "-rf", "output"])
+    subprocess.run(["rm", "-f", "log.sparta"])

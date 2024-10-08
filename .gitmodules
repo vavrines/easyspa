@@ -1,0 +1,3 @@
+[submodule "sparta"]
+	path = sparta
+	url = https://github.com/sparta/sparta
