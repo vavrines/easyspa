@@ -1,7 +1,6 @@
 import subprocess
 import os
 
-
 def build_sparta(args):
     dirc = "build" if len(args.mode) < 2 else args.mode[1]
     subprocess.run(["mkdir", "-p", dirc])
@@ -10,7 +9,6 @@ def build_sparta(args):
     subprocess.run(["cmake", "-DSPARTA_MACHINE=t", "BUILD_MPI=ON", "../sparta/cmake"])
     subprocess.run(["make", "-j", str(args.np)])
     subprocess.run(["cp", "src/spa_t", ".."])
-
 
 def prepare_simulation(args):
     mode = args.mode
@@ -23,7 +21,6 @@ def prepare_simulation(args):
     subprocess.run(["cp", "surf2paraview.py", dirc])
 
     print(f"Working directory: ({dirc}) setup complete")
-
 
 def run_simulation(args):
     mode = args.mode
