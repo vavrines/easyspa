@@ -1,7 +1,6 @@
 import os
 import subprocess
 
-
 def write_solution(args):
     mode = args.mode
 
