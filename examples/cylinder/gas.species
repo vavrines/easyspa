@@ -1,0 +1,14 @@
+# Species data
+
+# species name
+# molecular weight (atomic mass units, e.g. 16 for oxygen)
+# molecular mass (kg)
+# rotational degrees of freedom (integer, unitless)
+# inverse rotational relaxtion number (unitless)
+# vibrational degrees of freedom (integer, unitless
+# inverse vibrational relaxation number (unitless)
+# vibrational temperature (K)
+# species weight (unitless)
+# multiple of electon charge (1 for a proton)
+
+Ar    39.95    6.63E-26    0    0.0    0    0.0    0.0    1.0    0.0
