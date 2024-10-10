@@ -35,6 +35,6 @@ def run_simulation(args):
     if np == 1:
         cmd = f"./spa_t < {local_file}"
     else:
-        cmd = f"mpirun -np {np} spa_t < {local_file}"
+        cmd = f"mpirun -np {np} ./spa_t < {local_file}"
 
     subprocess.run(cmd, shell=True)
