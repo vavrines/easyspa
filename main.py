@@ -3,7 +3,7 @@ Make life easier with sparta
 ==================================
 
 - build sparta: python main.py build -np 8
-- prepare directory: python main.py prepare run/ examples/cylinder/
+- prepare directory: python main.py prepare run/ examples/config/cylinder/
 - run sparta: python main.py run run/ma2cylinder.cfg -np 32
 - generate vtks: python main.py paraview run/
 - clean vtks: python main.py rmgrid run/
