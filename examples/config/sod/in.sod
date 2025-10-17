@@ -1,0 +1,47 @@
+##################################################
+# 2D sod shock tube
+# Created by: 
+# Time: 10/2024
+##################################################
+seed         12345
+dimension       2
+units               si
+
+#global              gridcut 0.03 comm/sort yes
+
+boundary	    r  p  p
+
+create_box          0.0 1.0 -0.005 0.005 -0.5 0.5
+create_grid         1000 1 1
+balance_grid        rcb cell
+
+region              HZONE block 0 0.5 -0.005 0.005 -0.5 0.5
+region              LZONE block 0.5 1 -0.005 0.005 -0.5 0.5
+
+species             ar.species Ar Ar_2
+
+mixture             arHi Ar temp 4.811161896e-3 nrho 1.508295626e25
+
+mixture             arLo Ar_2  temp 3.848929516e-3 nrho 1.885369532e24
+
+global               fnum 3.016591252e15
+
+create_particles    arHi n 0 region HZONE
+create_particles    arLo n 0 region LZONE 
+
+collide                  vss all ar.vss
+
+compute             speed1 grid all all massrho u v
+compute             temp1 thermal/grid all all temp press
+
+dump                c1 grid all 1000 speed.*.dat id xc yc c_speed1[*]
+dump                c2 grid all 1000 temp.*.dat id xc yc c_temp1[*]
+
+write_grid          sod.grid
+
+timestep            2e-4
+
+stats		    5
+stats_style	    step cpu  time np nattempt ncoll nscoll nscheck
+
+run                 1000

@@ -1,0 +1,9 @@
+# VSS collision model parameters for each species
+
+# diameter (m)
+# omega
+# tref
+# alpha
+
+Ar     2.786954415036319e-12  0.81  273.15  1.0
+Ar_2   2.786954415036319e-12  0.81  273.15  1.0
