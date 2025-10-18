@@ -3,20 +3,15 @@ Make life easier with sparta
 ==================================
 
 DSMC suite for particle transport
-Copyright (c) 2024 Tianbai Xiao <tianbaixiao@gmail.com>
+Copyright (c) 2024-2025 Tianbai Xiao <tianbaixiao@gmail.com>
 """
 
-import easyspa.parser
-import easyspa.runner
-import easyspa.writer
-import easyspa.cleaner
+from .parser import *
+from .runner import *
+from .writer import *
+from .cleaner import *
 
-from easyspa.parser import *
-from easyspa.runner import *
-from easyspa.writer import *
-from easyspa.cleaner import *
-
-from easyspa.__about__ import __author__, __author_email__, __version__
+from .__about__ import __author__, __author_email__, __version__
 
 def select_mode(mode):
     match mode[0]:
