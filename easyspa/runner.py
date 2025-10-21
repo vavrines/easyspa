@@ -1,5 +1,6 @@
 import subprocess
 import os
+from pathlib import Path
 
 def build_sparta(args):
     dirc = "build" if len(args.mode) < 2 else args.mode[1]
@@ -17,8 +18,11 @@ def prepare_simulation(args):
 
     subprocess.run(["cp", "-r", src, dirc])
     subprocess.run(["cp", "spa_t", dirc])
-    subprocess.run(["cp", "grid2paraview.py", dirc])
-    subprocess.run(["cp", "surf2paraview.py", dirc])
+
+    gf = Path(__file__).resolve().parent.joinpath("../grid2paraview.py")
+    sf = Path(__file__).resolve().parent.joinpath("../surf2paraview.py")
+    subprocess.run(["cp", gf, dirc])
+    subprocess.run(["cp", sf, dirc])
 
     print(f"Working directory: ({dirc}) setup complete")
 
