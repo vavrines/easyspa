@@ -21,6 +21,7 @@ def parse_arguments():
         help="Path to the input file.",
     )
     parser.add_argument("-np", default=1, type=int, help="number of processors")
+    parser.add_argument("-x", default=100, type=int, help="number of post-processing batch grids in x-axis")
 
     args = parser.parse_args()
     return args
